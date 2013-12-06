@@ -15,3 +15,7 @@ dependencies {
 	compile 'com.sun.faces:jsf-api:2.2.4'
 	compile 'mysql:mysql-connector-java:5.1.27'
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.9'
+}
