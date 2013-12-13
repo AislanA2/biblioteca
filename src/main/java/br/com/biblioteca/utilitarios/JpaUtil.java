@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 public class JpaUtil {
 	
-	private static final String PERSISTENCE_UNIT_NAME = "biblioteca";
+	private static final String PERSISTENCE_UNIT_NAME = "biblioteca-hsqldb";
 	
 	private static ThreadLocal<EntityManager> manager = new ThreadLocal<EntityManager>();
 
