@@ -47,3 +47,13 @@ Pronto!
     ```
     git checkout -f inicio
     ```
+
+### Primeiros Passos
+
+* Projeto contendo os primeiros conceitos básicos de JPA e JSF.
+* Inclusão do JPAUtil com as principais comandos utilizados pelo JPA e da entidade Livro.
+* Inclusão das primeiras páginas do JSF e do primeiro managed bean.
+
+    ```
+    git checkout -f primeirosPassos
+    ```
