@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:body>
+		<h:form>
+			<h:panelGrid columns="2">
+				Titulo: <h:inputText value="#{livroBean.titulo}"/><br/>
+				Autor: <h:inputText value="#{livroBean.autor}"/><br/>
+				Categoria: <h:inputText value="#{livroBean.categoria}"/><br/>
+				Data de Publicacao: <h:inputText value="#{livroBean.dataPublicacao}">
+					<f:convertDateTime pattern="dd/MM/yyyy"/>
+				</h:inputText><br/>
+			</h:panelGrid>
+			<h:commandButton value="Salvar" action="#{livroBean.salva}"/>
+		</h:form>
+	</h:body>
+
+</html>
