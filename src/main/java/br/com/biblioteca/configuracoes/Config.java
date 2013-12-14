@@ -1,17 +1,20 @@
 package br.com.biblioteca.configuracoes;
 
-import java.util.Set;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
-import javax.servlet.ServletContainerInitializer;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-
-public class Config implements ServletContainerInitializer{
+@WebListener
+public class Config implements ServletContextListener{
 
 	@Override
-	public void onStartup(Set<Class<?>> classes, ServletContext context)
-			throws ServletException {
-		System.setProperty("org.apache.el.parser.COERCE_TO_ZERO", "false");
+	public void contextDestroyed(ServletContextEvent arg0) {
+		// do nothing
+	}
+
+	@Override
+	public void contextInitialized(ServletContextEvent arg0) {
+		System.setProperty("org.apache.el.parser.COERCE_TO_ZERO", "false");		
 	}
 
 }
