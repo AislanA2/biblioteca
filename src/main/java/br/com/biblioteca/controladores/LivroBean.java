@@ -1,8 +1,8 @@
 package br.com.biblioteca.controladores;
 
-import java.util.Date;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import br.com.biblioteca.dao.Dao;
@@ -15,54 +15,32 @@ public class LivroBean {
 	
 	private Dao<Livro> dao = new JpaDao<Livro>(Livro.class, JpaUtil.getEntityManager());
 	
-	private String titulo;
-	private String autor;
-	private String categoria;
-	private Date dataPublicacao;
+	private Livro livro = new Livro();
 	
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getAutor() {
-		return autor;
-	}
-
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
-	public Date getDataPublicacao() {
-		return dataPublicacao;
-	}
-
-	public void setDataPublicacao(Date dataPublicacao) {
-		this.dataPublicacao = dataPublicacao;
+	private List<Livro> livros;
+	
+	@PostConstruct
+	public void carregaLivros(){
+		livros = dao.listar();
 	}
 	
-	public void salva(){
-		System.out.println(titulo + autor);
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 	
 	public List<Livro> getLivros(){
-		
-		return dao.listar();
+		return livros;
+	}
+	
+	public void salvar(){
+		dao.salvar(livro);
 	}
 	
 	public void deletar(Livro livro){
-		
 		dao.deletar(livro);
 	}
 

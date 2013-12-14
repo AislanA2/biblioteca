@@ -3,16 +3,30 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 	<h:body>
-		<h:form>
-			<h:panelGrid columns="2">
-				Titulo: <h:inputText value="#{livroBean.titulo}"/><br/>
-				Autor: <h:inputText value="#{livroBean.autor}"/><br/>
-				Categoria: <h:inputText value="#{livroBean.categoria}"/><br/>
-				Data de Publicacao: <h:inputText value="#{livroBean.dataPublicacao}">
+		<h:messages globalOnly="true"/>
+		<h:form prependId="false">
+			<h:panelGrid columns="3">
+			
+				<h:outputLabel value="Titulo:" for="titulo"/>
+				<h:inputText id="titulo" value="#{livroBean.livro.titulo}" required="true"/>
+				<h:message for="titulo"/>
+				
+				<h:outputLabel value="Autor:" for="autor"/>
+				<h:inputText id="autor" value="#{livroBean.livro.autor}" required="true"/>
+				<h:message for="autor"/>
+				
+				<h:outputLabel value="Categoria:" for="categoria"/>
+				<h:inputText id="categoria" value="#{livroBean.livro.categoria}" required="true"/>
+				<h:message for="categoria"/>
+				
+				<h:outputLabel value="Data de Publicação:" for="dataDePublicacao"/>
+				<h:inputText id="dataDePublicacao" value="#{livroBean.livro.dataPublicacao}" required="true">
 					<f:convertDateTime pattern="dd/MM/yyyy"/>
-				</h:inputText><br/>
+				</h:inputText>
+				<h:message for="dataDePublicacao"/>
+				
 			</h:panelGrid>
-			<h:commandButton value="Salvar" action="#{livroBean.salva}"/>
+			<h:commandButton value="Salvar" action="#{livroBean.salvar}"/>
 		</h:form>
 	</h:body>
 
