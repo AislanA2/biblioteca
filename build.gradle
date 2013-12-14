@@ -21,7 +21,7 @@ dependencies {
 	compile 'org.hibernate:hibernate-entitymanager:4.2.8.Final'
 	compile 'com.sun.faces:jsf-impl:2.2.4'
 	compile 'com.sun.faces:jsf-api:2.2.4'
-	compile 'hsqldb:hsqldb:1.8.0.10'
+	compile 'org.hsqldb:hsqldb:2.3.1'
 	compile 'mysql:mysql-connector-java:5.1.27'
 }
 
